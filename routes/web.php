@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 Route::get('/register', 'App\Http\Controllers\AuthController@showRegister');
 Route::post('/register', 'App\Http\Controllers\AuthController@register');
 Route::get('/login', 'App\Http\Controllers\AuthController@showLogin')->name('login');
